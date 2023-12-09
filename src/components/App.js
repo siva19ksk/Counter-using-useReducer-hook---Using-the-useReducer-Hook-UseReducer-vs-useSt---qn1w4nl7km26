@@ -4,13 +4,13 @@ const App = () => {
 const initialTaskState ={count:0};
 const [taskState,dispatch]=useReducer(reducer,initialTaskState);
 function reducer(state,action){
-  switch(action){
+  switch(action.type){
     case 'add':
     return {count:state.count + 1};
     case 'delete':
     return {count:state.count > 0 ? state.count - 1 : 0};
     case 'deleteAll':
-    return {count:state.count + 1};
+    return {count:0};
   }
 }
   return (
